@@ -11,6 +11,7 @@ library("KoNLP")
 library(rvest)
 library(dplyr)
 
+shell('docker run -d -p 4445:4444 selenium/standalone-chrome')
 
 ### 셀레니움 연결
 remDr <- remoteDriver(remoteServerAddr = 'localhost', 
