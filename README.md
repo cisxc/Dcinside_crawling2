@@ -9,7 +9,7 @@
 
 * https://www.dcinside.com/ 랭크 페에지를 셀레니운을 이용하여 가져옴
 
-![Alt text](/img/rank_jp.JPG)
+![Alt text](/img/rank_p.JPG)
 
 * 랭크 데이터 프레임에 이름과 주소를 넣어주었다.
 
