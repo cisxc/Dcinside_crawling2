@@ -39,4 +39,14 @@
  
 <h2> 실행 및 분석 결과 </h2>
 
-
+ <h3> 연관어 분석 </h3>
+ 
+ ![Alt text](/img/network.JPG)
+ 
+  <h3> 단어 클라우드 </h3>
+ 
+ ![Alt text](/img/wordcloud.JPG)
+ 
+  <h3> 점 그래프 </h3>
+ 
+ ![Alt text](/img/plot.JPG)
