@@ -64,7 +64,7 @@ ko.words <- function(doc){
 
 options(mc.cores=1)    # 단일 Core 만 활용하도록 변경 (옵션)
 
-
+#연관어를 위해 토큰 분류
 cps <- VCorpus(VectorSource(all.str))  
 tdm <- TermDocumentMatrix(cps,control=list(tokenize=ko.words,   ## token 분류시 활용할 함수명 지정
                                        removePunctuation=T,
@@ -72,19 +72,13 @@ tdm <- TermDocumentMatrix(cps,control=list(tokenize=ko.words,   ## token 분류�
                                        wordLengths=c(2, 6),  
                                        weighting=weightBin))  
 
-#최종결과 확인
-dim(tdm)
-tdm.matrix <- as.matrix(tdm)
-#Encoding(rownames(tdm.matrix)) <- "UTF-8"
-rownames(tdm.matrix)[1:100]
-
-
 #자주 쓰이는 단어 순으로 order 처리
 word.count <- rowSums(tdm.matrix)  ##각 단어별 합계를 구함
 word.order <- order(word.count, decreasing=T)  #다음으로 단어들을 쓰인 횟수에 따라 내림차순으로 정렬
 freq.words <- tdm.matrix[word.order[1:20], ] #Term Document Matrix에서 자주 쓰인 단어 상위 20개에 해당하는 것만 추출
 co.matrix <- freq.words %*% t(freq.words)  #행렬의 곱셈을 이용해 Term Document Matrix를 Co-occurence Matrix로 변경
 
+#연관어 그래프그리기
 qgraph(co.matrix,
        labels=rownames(co.matrix),   ##label 추가
        diag=F,                       ## 자신의 관계는 제거함
@@ -92,6 +86,14 @@ qgraph(co.matrix,
        edge.color='blue',
        vsize=log(diag(co.matrix))*2) ##diag는 matrix에서 대각선만 뽑는 것임. 즉 그 단어가 얼마나 나왔는지를 알 수 있음. vsize는 그 크기를 결정하는데 여기 인자값으로 단어가 나온 숫자를 넘겨주는 것임. log를 취한것은 단어 크기의 차이가 너무 커서 log를 통해서 그 차이를 좀 줄여준것임. 
 
+
+
+#자주 쓰이는 단어 순으로 order 처리
+word.count <- rowSums(tdm.matrix)  ##각 단어별 합계를 구함
+word.order <- order(word.count, decreasing=T)  #다음으로 단어들을 쓰인 횟수에 따라 내림차순으로 정렬
+freq.words <- tdm.matrix[word.order[1:20], ] #Term Document Matrix에서 자주 쓰인 단어 상위 20개에 해당하는 것만 추출
+co.matrix <- freq.words %*% t(freq.words)  #행렬의 곱셈을 이용해 Term Document Matrix를 Co-occurence Matrix로 변경
+co.matrix
 
 
 
@@ -104,12 +106,6 @@ word_vector = gsub('[~!@#$%&*()_+=?<>^]','',word_vector)
 word_vector <- Filter(function(x){nchar(x)>=2 && nchar(x)<=5}, word_vector)
 name = table(word_vector)
 
-#자주 쓰이는 단어 순으로 order 처리
-word.count <- rowSums(tdm.matrix)  ##각 단어별 합계를 구함
-word.order <- order(word.count, decreasing=T)  #다음으로 단어들을 쓰인 횟수에 따라 내림차순으로 정렬
-freq.words <- tdm.matrix[word.order[1:20], ] #Term Document Matrix에서 자주 쓰인 단어 상위 20개에 해당하는 것만 추출
-co.matrix <- freq.words %*% t(freq.words)  #행렬의 곱셈을 이용해 Term Document Matrix를 Co-occurence Matrix로 변경
-co.matrix
 
 
 
