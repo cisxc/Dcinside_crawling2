@@ -7,7 +7,7 @@
 
 <h2> 수집방법 </h2>
 
-* https://www.dcinside.com/ 랭크 페에지를 셀레니움을 이용하여 가져옴
+* https://www.dcinside.com/ 랭크 페이지를 셀레니움을 이용하여 가져옴
 
 ![Alt text](/img/rank_hp.JPG)
 
