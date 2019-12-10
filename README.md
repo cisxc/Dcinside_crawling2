@@ -7,7 +7,7 @@
 
 <h2> 수집방법 </h2>
 
-* https://www.dcinside.com/ 랭크 페에지를 셀레니운을 이용하여 가져옴
+* https://www.dcinside.com/ 랭크 페에지를 셀레니움을 이용하여 가져옴
 
 ![Alt text](/img/rank_hp.JPG)
 
@@ -15,35 +15,28 @@
 
 * 랭크 데이터 프레임의 주소를 이용하여 1~10순위에 있는 갤러리의 글들을 100개씩 30분 주기로 긁어왔다.
 
+<h2> 결과 예상 </h2>
+
+* 활발한 커뮤니티의 이슈를 얻을 수있다.
+
+* 시간대 별로 인기있는 갤러리 랭크를 얻을 수 있다.
+
+* 많이 쓰는 단어 활용하여 연관어 분석을 할 수 있다.
+
  ****
  
- <h2> 결과 예상 </h2>
+ <h2> 랭zld리 </h2>
  
+ <h3> 갤러리 랭크 </h3>
  
-~~~
+ ![Alt text](/img/rank.JPG)
  
+ <h3> 단어 랭크 </h3>
  
+ ![Alt text](/img/rank2.JPG)
 
  ****
  
 <h2> 실행 및 분석 결과 </h2>
 
-<h3> 전북대 </h3>
 
-![Alt text](/img/JBNU.JPG)
-
-<h3> 서울대 </h3>
-
-![Alt text](/img/SU.JPG)
-
-<h3> 연세대 </h3>
-
-![Alt text](/img/YU.JPG)
-
-<h3> 고려대 </h3>
-
-![Alt text](/img/KU.JPG)
-
-<h3> 전남대 </h3>
-
-![Alt text](/img/JNNU.JPG)
